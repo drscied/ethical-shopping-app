@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Shopping Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">Ethical Shopping Assistant</h1>
+        
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <form id="searchForm" class="mb-6">
+                    <div class="flex gap-4">
+                        <input type="text" id="productName" placeholder="Enter product name..." 
+                               class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" 
+                                class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            Search
+                        </button>
+                    </div>
+                </form>
+
+                <div id="results" class="hidden">
+                    <div id="productInfo" class="mb-6">
+                        <h2 class="text-2xl font-semibold mb-2">Product Information</h2>
+                        <div id="companyStatus" class="p-4 rounded-lg mb-4"></div>
+                        <div id="productDetails" class="space-y-2"></div>
+                    </div>
+
+                    <div id="alternatives" class="hidden">
+                        <h2 class="text-2xl font-semibold mb-4">Alternative Products</h2>
+                        <div id="alternativesList" class="space-y-4"></div>
+                    </div>
+                </div>
+
+                <div id="loading" class="hidden">
+                    <div class="flex justify-center items-center py-8">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
